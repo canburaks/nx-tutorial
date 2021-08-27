@@ -1,0 +1,4 @@
+/* apps/store/pages/tailwind.css */
+@tailwind components;
+@tailwind base;
+@tailwind utilities;

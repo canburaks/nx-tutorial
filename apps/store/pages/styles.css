@@ -1,3 +1,6 @@
+/* apps/store/pages/tailwind.css */
+@import "./tailwind.css";
+
 .app {
   font-family: sans-serif;
   min-width: 300px;

@@ -77,6 +77,46 @@
           }
         }
       }
+    },
+    "tailwind-ui": {
+      "root": "libs/tailwind-ui",
+      "sourceRoot": "libs/tailwind-ui/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/tailwind-ui",
+            "tsConfig": "libs/tailwind-ui/tsconfig.lib.json",
+            "project": "libs/tailwind-ui/package.json",
+            "entryFile": "libs/tailwind-ui/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "libs/tailwind-ui/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/tailwind-ui/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/tailwind-ui"],
+          "options": {
+            "jestConfig": "libs/tailwind-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
